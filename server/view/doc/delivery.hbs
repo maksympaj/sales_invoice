@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Delivery Sheet</title>
+  <style>
+    @import url('http://fonts.cdnfonts.com/css/microsoft-sans-serif');
+
+    html {
+      zoom: 0.6;
+    }
+
+    * {
+      font-family: 'Microsoft Sans Serif';
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .table {
+      margin-top: 15px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .table thead tr {
+      background-color: #dbe5f1;
+    }
+
+    .table th {
+      text-transform: uppercase;
+    }
+
+    .table th,
+    .table td {
+      font-size: 14px;
+      padding: 5px;
+    }
+
+    .table tr,
+    .table th,
+    .table td {
+      border: 1px solid #000000;
+    }
+
+    .logo {
+      width: 200px;
+      float: right;
+    }
+
+    .title {
+      margin-bottom: 40px;
+      display: inline-block;
+    }
+
+    .desc {
+      margin-bottom: 40px;
+    }
+
+    .contact-info {
+      margin-top: 10px;
+      font-size: 0;
+    }
+
+    .contact-info>* {
+      font-size: 16px;
+      display: inline-block;
+    }
+
+    .contact-info .company {
+      vertical-align: top;
+      width: 40%;
+    }
+
+    .contact-info .client {
+      vertical-align: top;
+      width: 30%;
+    }
+
+    .table th:first-child,
+    .table td:first-child {
+      width: 15%;
+    }
+
+    .delivery-table th:nth-child(2),
+    .delivery-table td:nth-child(2) {
+      width: 50%;
+    }
+
+    .delivery-table th:last-child,
+    .delivery-table td:last-child {
+      width: 15%;
+    }
+
+    .sign-area {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px dotted #000000;
+      width: 70%;
+      min-height: 200px;
+    }
+
+    .sign-desc {
+      font-style: italic;
+      font-size: 16px;
+      margin-bottom: 30px;
+      flex-grow: 1;
+    }
+
+    .sign-img {
+      display: block;
+      margin: 0 auto;
+      width: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="title">Delivery Note</h1>
+  <img class="logo" src="http://localhost:4000/images/logo_title.png" alt="">
+  <p><b>Invoice #</b>: {{invoiceNum}}</p>
+  <div class="contact-info">
+    <div class="company">
+      <p>Blueocean Int’l (HK) Ltd</p>
+      <p>19/F</p>
+      <p>Bel Trade Commercial Building</p>
+      <p>3 Burrows Street</p>
+      <p>Wanchai, Hong Kong</p>
+      <p>Tel: 2169 3337</p>
+      <p>
+        Email:
+        <span>info@ergoseatings.com</span>
+      </p>
+    </div>
+    <div class="client">
+      {{#with client}}
+      <b>Client’s Name: {{name}}</b>
+      {{#if unit}}
+      <p>Unit {{unit}}</p>
+      {{/if}}
+      {{#if floor}}
+      <p>Floor {{floor}}</p>
+      {{/if}}
+      {{#if block}}
+      <p>Block {{block}}</p>
+      {{/if}}
+      <p>{{street}}</p>
+      <p>{{district}}</p>
+      <p>Email: {{email}}</p>
+      <p>Phone: {{phone}}</p>
+      {{/with}}
+    </div>
+  </div>
+  <table class="delivery-table table">
+    <thead>
+      <tr>
+        <th>Salesperson</th>
+        <th>Delivery Date</th>
+        <th>Payment Terms</th>
+        <th>Due Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {{#with delivery}}
+        <td>{{sellerName}}</td>
+        <td>{{proDeliveryDate}}</td>
+        <td>{{paymentTerms}}</td>
+        <td>{{dueDate}}</td>
+        {{/with}}
+      </tr>
+    </tbody>
+  </table>
+  <table class="product-table table">
+    <thead>
+      <tr>
+        <th>QTY</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {{#with product}}
+        <td>{{qty}}</td>
+        <td>{{{description}}}</td>
+        {{/with}}
+      </tr>
+    </tbody>
+  </table>
+  <div class="sign-area">
+    <p class="sign-desc">Please sign here to confirm delivery of items above are delivered in good condition:</p>
+    {{#if signURL}}
+    <img class="sign-img" alt="" src="{{signURL}}">
+    {{/if}}
+  </div>
+</body>
+
+</html>

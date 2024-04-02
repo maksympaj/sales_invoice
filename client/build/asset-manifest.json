@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2ae47eeb.chunk.css",
+    "main.js": "/static/js/main.a3c15052.chunk.js",
+    "main.js.map": "/static/js/main.a3c15052.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.64e388bc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.64e388bc.js.map",
+    "static/js/2.0d385179.chunk.js": "/static/js/2.0d385179.chunk.js",
+    "static/js/2.0d385179.chunk.js.map": "/static/js/2.0d385179.chunk.js.map",
+    "static/js/3.21bde605.chunk.js": "/static/js/3.21bde605.chunk.js",
+    "static/js/3.21bde605.chunk.js.map": "/static/js/3.21bde605.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.2ae47eeb.chunk.css.map": "/static/css/main.2ae47eeb.chunk.css.map",
+    "static/js/2.0d385179.chunk.js.LICENSE.txt": "/static/js/2.0d385179.chunk.js.LICENSE.txt",
+    "static/media/chinese.msyh.554cdb5e.ttf": "/static/media/chinese.msyh.554cdb5e.ttf",
+    "static/media/receipt_logo.15fa4131.png": "/static/media/receipt_logo.15fa4131.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.64e388bc.js",
+    "static/js/2.0d385179.chunk.js",
+    "static/css/main.2ae47eeb.chunk.css",
+    "static/js/main.a3c15052.chunk.js"
+  ]
+}
